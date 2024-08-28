@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradigm Pet Professionals - Contact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #003B6D;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+
+        nav ul li a:hover {
+            background-color: #6699CC;
+            border-radius: 5px;
+        }
+
+        main {
+            text-align: center;
+            padding: 50px;
+        }
+
+        main h1 {
+            color: #003B6D;
+            font-size: 36px;
+        }
+
+        main p {
+            font-size: 18px;
+            color: #676767;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: left;
+        }
+
+        form label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: #6699CC;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        form button:hover {
+            background-color: #003B6D;
+        }
+
+        footer {
+            background-color: #003B6D;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            let name = document.forms["contactForm"]["name"].value;
+            let email = document.forms["contactForm"]["email"].value;
+            let phone = document.forms["contactForm"]["phone"].value;
+            let timezone = document.forms["contactForm"]["timezone"].value;
+
+            if (name === "" || email === "" || phone === "" || timezone === "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="C:\Users\sheen\Downloads\petshoplogo.png" alt="Paradigm Pet Professionals Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dog-owners.html">Dog Owners</a></li>
+                <li><a href="cat-owners.html">Cat Owners</a></li>
+                <li><a href="bird-owners.html">Bird Owners</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contact Us</h1>
+        <p>Request a virtual consultation with a pet professional</p>
+        <form name="contactForm" action="submit_form.php" onsubmit="return validateForm()">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
+
+            <label for="timezone">Time Zone</label>
+            <select id="timezone" name="timezone">
+                <option value="">Select your time zone</option>
+                <option value="pst">PST</option>
+                <option value="mst">MST</option>
+                <option value="cst">CST</option>
+                <option value="est">EST</option>
+            </select>
+
+            <label for="pet-name">Pet's Name</label>
+            <input type="text" id="pet-name" name="pet-name">
+
+            <label for="pet-type">Pet's Type</label>
+            <input type="text" id="pet-type" name="pet-type">
+
+            <label for="pet-age">Pet's Age</label>
+            <input type="number" id="pet-age" name="pet-age">
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Paradigm Pet Professionals</p>
+    </footer>
+</body>
+</html>
